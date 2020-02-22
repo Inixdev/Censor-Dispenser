@@ -6,25 +6,22 @@ email_two = open("email_two.txt", "r").read()
 email_three = open("email_three.txt", "r").read()
 email_four = open("email_four.txt", "r").read()
 
-#######################################
-Email_One
-#######################################
-
-
+## Email_One ##
 
 def censor_words(email, words):
-  stars = []
-  while len(stars) < len(words):
-    stars.append('*')
-  stars_join = ''.join(stars)
-  new_email = email.replace(words, stars_join)
+
+  asterisk = []
+  while len(asterisk) < len(words):
+    asterisk.append('*')
+  asterisk_join = ''.join(asterisk)
+  new_email = email.replace(words, asterisk_join)
+
   return new_email
 
-#print(censor_words(email_one, 'learning algorithms'))
+print(censor_words(email_one, 'learning algorithms'))
 
-#######################################
-Email_Two
-#######################################
+
+## Email_Two ##
 
 proprietary_terms = ["she", "personality matrix", "sense of self", "self-preservation", "learning algorithm", "her", "herself"]
 
@@ -52,9 +49,7 @@ def censor_lst(email, lst):
 print(censor_lst(email_two, proprietary_terms))
 
 
-#######################################
-Email_Three
-#######################################
+## Email_Three ##
 
 negative_words = ["concerned", "behind", "danger", "dangerous", "alarming", "alarmed", "out of control", "help", "unhappy", "bad", "upset", "awful", "broken", "damage", "damaging", "dismal", "distressed", "distressed", "concerning", "horrible", "horribly", "questionable"]
 
@@ -96,9 +91,7 @@ def negative_proprietary_censor(email, lst1, lst2):
 print(negative_proprietary_censor(email_three, negative_words,proprietary_terms))
 
 
-#######################################
-Email_Four
-#######################################
+## Email_Four ##
 
 def censor_it_all(email, lst1, lst2):
   censor_email = negative_proprietary_censor(email,lst1,lst2)
